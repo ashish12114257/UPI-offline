@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-card-alt: #f1f5f9;
+  --bg-elevated: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --bg-overlay: rgba(15, 23, 42, 0.08);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-inverse: #ffffff;
+  --border: #e2e8f0;
+  --border-light: #f1f5f9;
+  --sidebar-bg: #ffffff;
+  --navbar-bg: rgba(255, 255, 255, 0.9);
+  --skeleton-from: #e2e8f0;
+  --skeleton-via: #cbd5e1;
+  --skeleton-to: #e2e8f0;
+  color-scheme: light;
+}
+
+.dark {
+  --bg-page: #020617;
+  --bg-card: rgba(15, 23, 42, 0.8);
+  --bg-card-alt: rgba(15, 23, 42, 0.6);
+  --bg-elevated: rgba(15, 23, 42, 0.95);
+  --bg-subtle: #1e293b;
+  --bg-overlay: rgba(0, 0, 0, 0.6);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-inverse: #0f172a;
+  --border: #1e293b;
+  --border-light: #0f172a;
+  --sidebar-bg: rgba(15, 23, 42, 0.95);
+  --navbar-bg: rgba(15, 23, 42, 0.95);
+  --skeleton-from: #1e293b;
+  --skeleton-via: #334155;
+  --skeleton-to: #1e293b;
+  color-scheme: dark;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 8px rgba(124, 58, 237, 0.15); }
+  50% { box-shadow: 0 0 20px rgba(124, 58, 237, 0.3); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.animate-fadeInUp {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+.stagger-5 { animation-delay: 0.25s; }
+.stagger-6 { animation-delay: 0.3s; }
+.stagger-7 { animation-delay: 0.35s; }
+.stagger-8 { animation-delay: 0.4s; }
+
+* { scrollbar-width: thin; }
+
+:root * { scrollbar-color: #cbd5e1 #f1f5f9; }
+.dark * { scrollbar-color: #1e293b #020617; }
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+:root ::-webkit-scrollbar-track { background: #f1f5f9; }
+:root ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+:root ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+.dark ::-webkit-scrollbar-track { background: #020617; }
+.dark ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+.dark ::-webkit-scrollbar-thumb:hover { background: #334155; }
+
+.glass {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(30, 41, 59, 0.6);
+}
+
+.glass-glow {
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.08);
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  border-color: rgba(124, 58, 237, 0.35);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.08);
+  transform: translateY(-2px);
+}
+
+html, body {
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
