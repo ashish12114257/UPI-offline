@@ -131,7 +131,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar }) => {
         </div>
 
         <a
-          href="http://localhost:8080/h2-console"
+          href={`${import.meta.env.VITE_API_BASE_URL}/h2-console`}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="H2 Database Console (opens in new tab)"

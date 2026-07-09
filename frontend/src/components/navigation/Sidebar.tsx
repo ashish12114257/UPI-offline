@@ -87,7 +87,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose, collapsed, on
                   Local Simulation
                 </span>
                 <p className="mt-1 text-[10px] leading-relaxed text-[var(--text-muted)]">
-                  API at localhost:8080
+                  {import.meta.env.VITE_API_BASE_URL}
                 </p>
               </div>
             </div>
